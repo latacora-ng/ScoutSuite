@@ -16,6 +16,7 @@ class ActivityLogs(Resources):
             self._parse(raw_log)
 
     def _parse(self, raw_log):
+        # Make sure that the filter in ScoutSuite/providers/azure/facade/monitor.py includes the required log types
         if raw_log.resource_type.value == 'Microsoft.Storage/storageAccounts':
             self._parse_storage_account_log(raw_log)
 
